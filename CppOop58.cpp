@@ -1,7 +1,9 @@
 ﻿
 #include <iostream>
+#include "intro.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    intro();
+    return 0;
 }
