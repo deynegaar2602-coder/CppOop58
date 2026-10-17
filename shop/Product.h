@@ -6,14 +6,14 @@
 // перша літера маленька, далі у поєднанні - великі
 // імена класів - CapitalCamelCase - перша літера велика
 
-class product {
+class Product {
 private:
 	std::string name;
 	double price;
 
 public:
-	std::string getName();
+	std::string getName() const;
 	void		setName(std::string);
-	double		getPrice();
+	double		getPrice() const;
 	void		setPrice(double);
 };
