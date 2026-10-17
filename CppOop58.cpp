@@ -1,9 +1,10 @@
 ﻿
-#include <iostream>
 #include "intro.h"
+#include "basics.h"
 
 int main()
 {
-    intro();
+    //intro();
+    basics();
     return 0;
 }

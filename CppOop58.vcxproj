@@ -139,11 +139,13 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="basics.cpp" />
     <ClCompile Include="CppOop58.cpp" />
     <ClCompile Include="fraction.cpp" />
     <ClCompile Include="intro.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="basics.h" />
     <ClInclude Include="fraction.h" />
     <ClInclude Include="intro.h" />
   </ItemGroup>

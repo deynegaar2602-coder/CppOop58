@@ -20,11 +20,39 @@ void intro() {
 		<< frac3.to_string() << std::endl
 		<< frac4->to_string() << std::endl;
 
-	fraction_t frac5(1, 2, (char*)"Half");
-	fraction_t* frac6 = new fraction_t(frac5);
+	fraction_t frac5(1, 2, new char[] {"Half"} );		// Params constructor
+	fraction_t* frac6 = new fraction_t(frac5);			// Copy constructor
 	std::cout
 		<< frac5.to_string() << std::endl
 		<< frac6->to_string() << std::endl;
+
+	fraction_t d = std::move(fraction_t::decil());		// Move constructor
+	std::cout << d.to_string() << std::endl;
+	std::cout
+		<< frac5.to_string() << " + " << d.to_string()
+		<< " = " << (frac5 + d).to_string() << std::endl;
+	std::cout << "______________________________" << std::endl;
+	fraction_t f;		// Default constructor (0/1)
+	std::cout << f.to_string() << std::endl;
+	f = d;				// Copy assignment (operator =): (1/10 Decil)
+	std::cout << f.to_string() << std::endl;
+
+	std::cout << "______________________________" << std::endl;
+	f = f + frac5;		// Move assignment (operator = (&&)): результат копіювання, що повертається 
+						// оператором +, підлягає руйнуванню f = (move) <--ret--(f + f5)
+	std::cout << f << std::endl;
+
+	f = f * frac5;
+	std::cout << f << std::endl;
+	f = f / frac5;
+	std::cout << f << std::endl;
+
+	std::cout << -f << std::endl;
+
+	f += 1;
+	std::cout << "f += 1: " << f << std::endl;
+	f += frac5;
+	std::cout << f << std::endl;
 
 	delete frac2;
 	delete frac4;

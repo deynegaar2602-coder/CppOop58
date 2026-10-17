@@ -24,12 +24,18 @@
     <ClCompile Include="fraction.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="basics.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fraction.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="intro.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="basics.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
