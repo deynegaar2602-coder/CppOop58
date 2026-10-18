@@ -145,6 +145,7 @@
     <ClCompile Include="intro.cpp" />
     <ClCompile Include="shop\Electrical.cpp" />
     <ClCompile Include="shop\Laptop.cpp" />
+    <ClCompile Include="shop\Monitor.cpp" />
     <ClCompile Include="shop\Product.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="intro.h" />
     <ClInclude Include="shop\Electrical.h" />
     <ClInclude Include="shop\Laptop.h" />
+    <ClInclude Include="shop\Monitor.h" />
     <ClInclude Include="shop\Product.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

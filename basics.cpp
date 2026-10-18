@@ -1,17 +1,30 @@
 
 #include <iostream>
 #include "basics.h"
-#include "shop/Laptop.h"
 
 void basics() {
 	std::cout << "OOP Basics" << std::endl;
-	Laptop* acer = new Laptop();
-	acer->setName("Acer Nitro");
-	acer->setPrice(60499);
-	acer->setPower(90);
-	acer->setHardware("Intel Core 5 Ram 16GB SSD 512GB");
+	// Поліморфізм - поєднання до єдиного масиву (колекції) об'єктів різного типу.
+	// Формально об'єкти мають один тип (базового класу), при цьому фактично є об'єктими 
+	// похідних (дочірніх) типів.
+	Product* stock[2];
 
-	std::cout << acer->toString() << std::endl;
+#pragma region Objects
+	stock[0] = (new Laptop())
+		->setHardware("Intel Core 5, RAM 16GB SSD 512GB")
+		->setPower(90)
+		->setName("Acer Nitro")
+		->setPrice(60499);
+	stock[1] = (new Monitor)
+		->setDiagonal(32)
+		->setPower(120)
+		->setName("Dell Vision")
+		->setPrice(7950);
+
+	for (auto product : stock){
+		std::cout << product->toString() << std::endl;
+	}
+#pragma endregion
 }
 
 /*
@@ -66,5 +79,18 @@ void basics() {
  а Ноутбук - від Електротовару (а значить і від товару).
  Але на відміну від простого розширення, спадкування зберігає типізацію, тобто Ноутбук окрім того,
  що сам є типом, також є типом Електротовар і Товар.
+ ----------------------------------------------------------------------------------------------------
+ Віртуальні методи
+ Різниця між віртуальними та невіртуальними методами виникає коли тип посилання і тип самого об'єкта не є однаковими
+ (посилання через батьківський тип).
+
+ Electrical* stock = new Laptop()
+ Тип посилання (stock) - Electrical*
+ Тип об'єктту - Laptop*
+ Віртуальні методи викликаються в об'єкта
+  stock->v() -- Laptop::v
+ Невіртуальні методи - за типом даних
+  stock->nv() -- Electrical::nv
+ Невіртуальні методи створюються за замовчуванням, для створення віртуальних необхідно додати оператор "virtual".
 
 */

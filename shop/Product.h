@@ -13,7 +13,9 @@ private:
 
 public:
 	std::string getName() const;
-	void		setName(std::string);
+	Product*	setName(std::string);
 	double		getPrice() const;
-	void		setPrice(double);
+	Product*	setPrice(double);
+
+	virtual std::string toString() const = 0;  // pure virtual OR abstract method
 };
